@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 import Button from "@/components/Button";
 import ImageViewer from "@/components/ImageViewer";
@@ -7,7 +7,7 @@ const PlaceholderImage = require("@/assets/images/background-image.png");
 
 export default function Index() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} />
       </View>
@@ -15,19 +15,18 @@ export default function Index() {
         <Button theme="primary" label="Choose a photo" />
         <Button label="Use this photo" />
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#25292e",
-    alignItems: "center",
   },
   imageContainer: {
-    flex: 1,
+    marginHorizontal: "auto",
     paddingTop: 28,
+    paddingBottom: 28,
   },
   footerContainer: {
     flex: 1 / 3,
